@@ -1,12 +1,17 @@
 <h1>Select stations:</h1>
 
-<form on-submit='search:{{searchterm}}'>
-	<input type='search' value='{{searchterm}}' required>
-	<input type='submit' value='Search'>
+<form class='pure-form' on-submit='search:{{searchterm}}'>
+	<fieldset>
+		<legend>Add a station...</legend>
+		<input type='search' value='{{searchterm}}' required class='pure-input-rounded'>
+		<input type='submit' value='Search' class='pure-button pure-button-primary'>
+	</fieldset>
 </form>
 
-<ul decorator='Slip'>
-	{{#stations}}
-		<li>{{name}}</li>
-	{{/stations}}
-</ul>
+<div class='pure-menu pure-menu-open'>
+	<ul decorator='Slip' >
+		{{#stations}}
+			<li><a href="javascript:void 0">{{name}}</a></li>
+		{{/stations}}
+	</ul>
+</div>
