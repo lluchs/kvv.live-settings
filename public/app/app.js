@@ -25,6 +25,12 @@ define(function(require) {
     event.original.preventDefault();
   });
 
+  page.on('reset', function(event) {
+    this.set('searchterm', '');
+    this.set('stops', null);
+    event.original.preventDefault();
+  });
+
   page.on('add', function(event, stop, duplicate) {
     if (!duplicate)
       page.get('favorites').push(stop);
