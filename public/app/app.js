@@ -9,19 +9,25 @@ define(function(require) {
     el: document.body,
     template: require('rv!template'),
     data: {
-      favorites: []
+      favorites: [],
+      isFavorite: function(stop) {
+        return this.get('favorites').some(function(fav) {
+          return fav.id === stop.id;
+        });
+      },
     },
   });
 
   page.on('search', function(event, name) {
-    getStops(name).then(function(stations) {
-      page.set('stations', stations);
+    getStops(name).then(function(stops) {
+      page.set('stops', stops);
     });
     event.original.preventDefault();
   });
 
-  page.on('add', function(event, stop) {
-    page.get('favorites').push(stop);
+  page.on('add', function(event, stop, duplicate) {
+    if (!duplicate)
+      page.get('favorites').push(stop);
   });
 
   function getStops(name) {

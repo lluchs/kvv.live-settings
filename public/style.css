@@ -3,3 +3,11 @@
 body {
 	padding: 1em;
 }
+
+.pure-g-r > div {
+	box-sizing: border-box;
+}
+
+.l-box {
+	padding: 1em;
+}

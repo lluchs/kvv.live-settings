@@ -1,7 +1,7 @@
 <h1>kvv.live settings</h1>
 
 <div class='pure-g-r'>
-	<div class='pure-u-1-2'>
+	<div class='pure-u-1-2 l-box'>
 		<form class='pure-form' on-submit='search:{{searchterm}}'>
 			<fieldset>
 				<legend>Add a station...</legend>
@@ -12,13 +12,17 @@
 
 		<div class='pure-menu pure-menu-open'>
 			<ul>
-				{{#stations}}
-					<li><a href='javascript:void 0' on-click='add:{{.}}'>{{name}}</a></li>
-				{{/stations}}
+				{{#stops}}
+					<li class='{{# isFavorite(.) }}pure-menu-disabled{{/isFavorite}}'>
+						<a href='javascript:void 0' on-click='add:{{.}}, {{isFavorite(.)}}'>
+							{{name}}
+						</a>
+					</li>
+				{{/stops}}
 			</ul>
 		</div>
 	</div>
-	<div class='pure-u-1-2'>
+	<div class='pure-u-1-2 l-box'>
 		<h2>Favorites</h2>
 		<div class='pure-menu pure-menu-open'>
 			<ul decorator='Slip'>
@@ -27,5 +31,8 @@
 				{{/favorites}}
 			</ul>
 		</div>
+		<p>
+			<small>Sort by touching and holding, remove by swiping.</small>
+		</p>
 	</div>
 </div>
