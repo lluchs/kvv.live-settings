@@ -1,1 +1,5 @@
 @import "bower_components/pure/pure.css";
+
+body {
+	padding: 1em;
+}

@@ -8,6 +8,9 @@ define(function(require) {
   var page = new Ractive({
     el: document.body,
     template: require('rv!template'),
+    data: {
+      favorites: []
+    },
   });
 
   page.on('search', function(event, name) {
@@ -15,6 +18,10 @@ define(function(require) {
       page.set('stations', stations);
     });
     event.original.preventDefault();
+  });
+
+  page.on('add', function(event, stop) {
+    page.get('favorites').push(stop);
   });
 
   function getStops(name) {

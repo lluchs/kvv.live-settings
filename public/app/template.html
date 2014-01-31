@@ -1,17 +1,31 @@
-<h1>Select stations:</h1>
+<h1>kvv.live settings</h1>
 
-<form class='pure-form' on-submit='search:{{searchterm}}'>
-	<fieldset>
-		<legend>Add a station...</legend>
-		<input type='search' value='{{searchterm}}' required class='pure-input-rounded'>
-		<input type='submit' value='Search' class='pure-button pure-button-primary'>
-	</fieldset>
-</form>
+<div class='pure-g-r'>
+	<div class='pure-u-1-2'>
+		<form class='pure-form' on-submit='search:{{searchterm}}'>
+			<fieldset>
+				<legend>Add a station...</legend>
+				<input type='search' value='{{searchterm}}' required class='pure-input-rounded'>
+				<input type='submit' value='Search' class='pure-button pure-button-primary'>
+			</fieldset>
+		</form>
 
-<div class='pure-menu pure-menu-open'>
-	<ul decorator='Slip' >
-		{{#stations}}
-			<li><a href="javascript:void 0">{{name}}</a></li>
-		{{/stations}}
-	</ul>
+		<div class='pure-menu pure-menu-open'>
+			<ul>
+				{{#stations}}
+					<li><a href='javascript:void 0' on-click='add:{{.}}'>{{name}}</a></li>
+				{{/stations}}
+			</ul>
+		</div>
+	</div>
+	<div class='pure-u-1-2'>
+		<h2>Favorites</h2>
+		<div class='pure-menu pure-menu-open'>
+			<ul decorator='Slip'>
+				{{#favorites}}
+					<li><a>{{name}}</a></li>
+				{{/favorites}}
+			</ul>
+		</div>
+	</div>
 </div>
