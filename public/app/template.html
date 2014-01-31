@@ -1,0 +1,12 @@
+<h1>Select stations:</h1>
+
+<form on-submit='search:{{searchterm}}'>
+	<input type='search' value='{{searchterm}}' required>
+	<input type='submit' value='Search'>
+</form>
+
+<ul decorator='Slip'>
+	{{#stations}}
+		<li>{{name}}</li>
+	{{/stations}}
+</ul>
