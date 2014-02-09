@@ -18,6 +18,12 @@ define(function(require) {
     },
   });
 
+  page.on('done', function() {
+    // Send the user back to the Pebble app.
+    var favorites = this.get('favorites');
+    location.href = 'pebblejs://close#' + encodeURIComponent(JSON.stringify({favorites: favorites}));
+  });
+
   page.on('search', function(event, name) {
     getStops(name).then(function(stops) {
       page.set('stops', stops);
