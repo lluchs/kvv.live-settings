@@ -9,7 +9,7 @@ define(function(require) {
     el: document.body,
     template: require('rv!template'),
     data: {
-      favorites: [],
+      favorites: decodeFavorites(location.hash),
       isFavorite: function(stop) {
         return this.get('favorites').some(function(fav) {
           return fav.id === stop.id;
@@ -50,5 +50,15 @@ define(function(require) {
     .then(function(response) {
       return response.stops;
     });
+  }
+
+  function decodeFavorites(hash) {
+    var favorites;
+    try {
+      favorites = JSON.parse(decodeURIComponent(hash.slice(1))).favorites;
+    } catch (e) {
+      favorites = [];
+    }
+    return favorites;
   }
 });
