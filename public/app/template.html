@@ -7,7 +7,9 @@
 				<legend>Add a station...</legend>
 				<input type='search' value='{{searchterm}}' required class='pure-input-rounded'>
 				<input type='submit' value='Search' class='pure-button pure-button-primary'>
-				<button class='pure-button' on-click='reset'>Reset</button>
+				{{#stops.length}}
+					<button class='pure-button' on-click='reset'>Clear</button>
+				{{/stops.length}}
 			</fieldset>
 		</form>
 
