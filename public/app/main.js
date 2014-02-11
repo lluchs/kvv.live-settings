@@ -7,6 +7,7 @@ requirejs.config({
     rv: '../bower_components/requirejs-ractive/rv',
     slip: '../bower_components/slip/slip',
     'ractive-decorators-slip': '../bower_components/ractive-decorators-slip/Ractive-decorators-Slip',
+    'ractive-events-tap': '../bower_components/ractive-events-tap/Ractive-events-tap',
   }
 });
 

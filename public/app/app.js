@@ -3,6 +3,7 @@
 define(function(require) {
   var Ractive = require('Ractive');
   require('ractive-decorators-slip');
+  require('ractive-events-tap');
   var reqwest = require('reqwest');
 
   var page = new Ractive({

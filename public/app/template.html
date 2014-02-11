@@ -1,7 +1,7 @@
 
 
 <h1>
-	<button id='done' class='pure-button' on-click='done'>Done</button>
+	<button id='done' class='pure-button' on-tap='done'>Done</button>
 	kvv.live settings
 </h1>
 
@@ -13,7 +13,7 @@
 				<input type='search' value='{{searchterm}}' required class='pure-input-rounded'>
 				<input type='submit' value='Search' class='pure-button pure-button-primary'>
 				{{#stops.length}}
-					<button class='pure-button' on-click='reset'>Clear</button>
+					<button class='pure-button' on-tap='reset'>Clear</button>
 				{{/stops.length}}
 			</fieldset>
 		</form>
@@ -22,7 +22,7 @@
 			<ul>
 				{{#stops}}
 					<li class='{{# isFavorite(.) }}pure-menu-disabled{{/isFavorite}}'>
-						<a href='javascript:void 0' on-click='add:{{.}}, {{isFavorite(.)}}'>
+						<a href='javascript:void 0' on-tap='add:{{.}}, {{isFavorite(.)}}'>
 							{{name}}
 						</a>
 					</li>
