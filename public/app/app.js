@@ -22,7 +22,7 @@ define(function(require) {
   page.on('done', function() {
     // Send the user back to the Pebble app.
     var favorites = this.get('favorites');
-    location.href = 'pebblejs://close#' + encodeURIComponent(JSON.stringify({favorites: favorites}));
+    location.href = 'pebblejs://close#' + utf8_to_b64(JSON.stringify({favorites: favorites}));
   });
 
   page.on('search', function(event, name) {
@@ -56,10 +56,18 @@ define(function(require) {
   function decodeFavorites(hash) {
     var favorites;
     try {
-      favorites = JSON.parse(decodeURIComponent(hash.slice(1))).favorites;
+      favorites = JSON.parse(b64_to_utf8(hash.slice(1))).favorites;
     } catch (e) {
       favorites = [];
     }
     return favorites;
+  }
+
+  function utf8_to_b64( str ) {
+    return window.btoa(unescape(encodeURIComponent( str )));
+  }
+
+  function b64_to_utf8( str ) {
+    return decodeURIComponent(escape(window.atob( str )));
   }
 });
