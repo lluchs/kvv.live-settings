@@ -15,6 +15,7 @@ body {
 
 header {
 	position: fixed;
+	top: 0;
 	left: 1em;
 	right: 1em;
 	width: auto !important;
