@@ -2,6 +2,7 @@
 
 body {
 	padding: 1em;
+	padding-top: 0;
 }
 
 .pure-g-r > div {
@@ -12,9 +13,25 @@ body {
 	padding: 1em;
 }
 
+header {
+	position: fixed;
+	left: 1em;
+	right: 1em;
+	width: auto !important;
+	padding: 5px 0;
+	background-color: white;
+}
+
+header + div {
+	margin-top: 3em;
+}
+
+header li {
+	font-size: 200%;
+}
+
 #done {
 	float: right;
-	font-size: 16px;
 
 	background: rgb(28, 184, 65);
 	color: white;
