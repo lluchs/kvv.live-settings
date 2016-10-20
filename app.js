@@ -1,5 +1,5 @@
 
-var http = require('http');
+var https = require('https');
 var express = require('express');
 
 var API_KEY = '377d840e54b59adbe53608ba1aad70e8';
@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 app.get('/api/stops/:search', function(req, res) {
   var query = encodeURIComponent(req.params.search);
-  http.get(apiUrl('http://live.kvv.de/webapp/stops/byname/' + query), function(apiResponse) {
+  https.get(apiUrl('https://live.kvv.de/webapp/stops/byname/' + query), function(apiResponse) {
 	res.status(apiResponse.statusCode);
 	res.set('Content-Type', apiResponse.headers['content-type']);
 	apiResponse.pipe(res);
