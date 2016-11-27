@@ -24,9 +24,9 @@
     "requirejs": "~2.1.10",
     "slip": "~1.0.0",
     "ractive-decorators-slip": "~0.1.0",
-    "requirejs-ractive": "~0.1.3",
+    "requirejs-ractive": "0.1.3",
     "pure": "~0.3.0",
-    "ractive-events-tap": "~0.1.0",
+    "ractive-events-tap": "0.1.0",
     "reqwest": "~1.0.2",
     "almond": "~0.2.9"
   }
