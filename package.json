@@ -14,11 +14,13 @@
   "author": "Luchs",
   "license": "MIT",
   "dependencies": {
-    "express": "~3.4.7"
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "serve-static": "^1.14.1"
   },
   "devDependencies": {
     "bower": "^1.8.0",
-    "gulp": "~3.5.2",
+    "gulp": "^4.0.2",
     "gulp-html-replace": "~0.2.0",
     "requirejs": "~2.1.10"
   }

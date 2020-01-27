@@ -1,13 +1,15 @@
 
 var https = require('https');
 var express = require('express');
+var morgan = require('morgan');
+var serveStatic = require('serve-static');
 
 var API_KEY = '377d840e54b59adbe53608ba1aad70e8';
 
 var app = express();
 
-app.use(express.logger());
-app.use(express.static('public'));
+app.use(morgan('tiny'));
+app.use(serveStatic('public'));
 
 app.get('/api/stops/:search', function(req, res) {
   var query = encodeURIComponent(req.params.search);
