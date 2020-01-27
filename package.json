@@ -19,7 +19,7 @@
     "serve-static": "^1.14.1"
   },
   "devDependencies": {
-    "bower": "^1.8.0",
+    "bower": "^1.8.8",
     "gulp": "^4.0.2",
     "gulp-html-replace": "~0.2.0",
     "requirejs": "~2.1.10"
